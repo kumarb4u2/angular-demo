@@ -1,0 +1,35 @@
+<p>todo-using-service works!</p>
+
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+  Enter Task name
+  <input
+    name="task"
+    type="text"
+    [(ngModel)]="taskName"
+    minlength="2"
+    required
+    #taskNameModel="ngModel"
+  />
+  <button type="submit" [disabled]="taskForm.invalid">Save</button>
+  <p *ngIf="taskNameModel.invalid">
+    Name is invalid, enter right name
+  </p>
+  <p *ngIf="taskNameModel.errors?.required">
+    Name is required
+  </p>
+  <p *ngIf="taskNameModel.errors?.minlength">
+    Minimum {{ taskNameModel.errors?.minlength.requiredLength }}
+    chars needed
+  </p>
+</form>
+
+<ul>
+  <li *ngFor="let task of getTasks(); index as i">
+    <span [ngStyle]="{ color: i % 2 === 0 ? evenColorCode : oddColorCode }">{{
+      task | uppercase
+    }}</span>
+    <button (click)="removeTask(task)">X</button>
+  </li>
+</ul>
+
+<a routerLink="/todoDisplayUsingService"> Go to display list</a>

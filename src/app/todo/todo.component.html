@@ -1,0 +1,20 @@
+<p>todo works!</p>
+
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+  <input type="text" name="task" id="task" [(ngModel)]="taskName" />
+</form>
+
+<ul>
+  <li *ngFor="let task of tasks; index as i">
+    <span [ngClass]="{ green: i % 2 === 0, red: i % 2 !== 0 }">{{
+      task | uppercase
+    }}</span>
+    <button (click)="removeTask(task)">X</button>
+  </li>
+</ul>
+
+<app-todo-input
+  [tasks]="tasks"
+  (sendData)="setCounter($event)"
+></app-todo-input>
+<h3>Counter from child component {{ counter }}</h3>

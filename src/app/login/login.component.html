@@ -1,0 +1,11 @@
+<p>login works!</p>
+<form [formGroup]="group" (ngSubmit)="login()">
+  <label>user name</label>
+  <input type="text" name="userName" formControlName="userName" />
+  <pre>
+      {{ userNameControl.errors | json }}
+  </pre>
+  <label>Password</label>
+  <input type="password" formControlName="password" />
+  <button>Log in</button>
+</form>
