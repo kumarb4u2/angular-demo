@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { TodoUsingServiceComponent } from "./todo-using-service/todo-using-service.component";
 import { TodoDisplayUsingServiceComponent } from "./todo-display-using-service/todo-display-using-service.component";
+import { HttpCallComponent } from "./http-call/http-call.component";
 
 const routes: Routes = [
   { path: "", component: TodoComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
     path: "todoDisplayUsingService",
     component: TodoDisplayUsingServiceComponent,
   },
+  { path: "http", component: HttpCallComponent },
 ];
 
 @NgModule({

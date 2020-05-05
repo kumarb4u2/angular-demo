@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -11,6 +12,7 @@ import { PowerPipe } from "./power.pipe";
 import { TodoInputComponent } from "./todo-input/todo-input.component";
 import { TodoUsingServiceComponent } from "./todo-using-service/todo-using-service.component";
 import { TodoDisplayUsingServiceComponent } from "./todo-display-using-service/todo-display-using-service.component";
+import { HttpCallComponent } from "./http-call/http-call.component";
 
 @NgModule({
   declarations: [
@@ -22,8 +24,15 @@ import { TodoDisplayUsingServiceComponent } from "./todo-display-using-service/t
     TodoInputComponent,
     TodoUsingServiceComponent,
     TodoDisplayUsingServiceComponent,
+    HttpCallComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
